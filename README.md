@@ -1,27 +1,27 @@
-# Fib-O
+# Fact-O
 
-[![CircleCI](https://circleci.com/gh/alexvcasillas/fib-o.svg?style=svg)](https://circleci.com/gh/alexvcasillas/fib-o)
+[![CircleCI](https://circleci.com/gh/alexvcasillas/fact-o.svg?style=svg)](https://circleci.com/gh/alexvcasillas/fact-o)
 
-**Fib-O** is a cached fibonacci implementation.
+**Fact-O** is a factorial implementation.
 
 ## Installation
 
 NPM
 
 ```
-npm install @alexvcasillas/fib-o
+npm install @alexvcasillas/fact-o
 ```
 
 YARN
 
 ```
-yarn add @alexvcasillas/fib-o
+yarn add @alexvcasillas/fact-o
 ```
 
 ## Usage
 
 ```
-import { fib } from '@alexvcasillas/fib-o';
-const result = fib(50);
-console.log(result); // 12586269025
+import { fact } from '@alexvcasillas/fact-o';
+const result = fact(15);
+console.log(result); // 1307674368000
 ```
