@@ -7,7 +7,7 @@ export default [
   {
     input: './src/index.js',
     output: {
-      file: './dist/fib-o.js',
+      file: './dist/fact-o.js',
       format: 'cjs'
     },
     plugins: [resolve(), babel(), uglify(), filesize()]
@@ -15,16 +15,16 @@ export default [
   {
     input: './src/index.js',
     output: {
-      file: './dist/fib-o.umd.js',
+      file: './dist/fact-o.umd.js',
       format: 'umd',
-      name: 'fib-o'
+      name: 'fact-o'
     },
     plugins: [resolve(), babel(), uglify(), filesize()]
   },
   {
     input: './src/index.js',
     output: {
-      file: './dist/fib-o.module.js',
+      file: './dist/fact-o.module.js',
       format: 'es'
     },
     plugins: [resolve(), babel(), uglify(), filesize()]

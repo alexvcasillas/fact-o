@@ -1,32 +1,36 @@
 const isInt = number => Number(number) === number && number % 1 === 0;
 
-const fib = number => {
-  if (typeof number === 'undefined')
+const fact = number => {
+  if (typeof number === 'undefined') {
     throw new Error(
-      `Fibonacci function takes one parameter for the calculations.`
+      `Factorial function takes one parameter for the calculations.`
     );
-  if (typeof number !== 'number')
+  }
+  if (typeof number !== 'number') {
     throw new Error(
-      `Fibonacci function takes a natural number as the single parameter for the calculations.`
+      `Factorial function takes a natural number as the single parameter for the calculations.`
     );
-  if (number < 0)
+  }
+  if (number < 0) {
     throw new Error(
-      `The fibonacci calculations require a non-negative (natural) number. >= 0`
+      `The factorial calculations require a non-negative (natural) number. >= 1`
     );
-  if (!isInt(number))
-    throw new Error(`The fibonacci sequence requires natural numbers.`);
-  const cache = {};
+  }
+  if (!isInt(number)) {
+    throw new Error(`The factorial sequence requires natural numbers.`);
+  }
+  // Explicit factorial returns: 0 and 1 is always 1 so we can avoid calculations
+  if (number === 0) return 1;
+  if (number === 1) return 1;
 
-  function f(number) {
-    if (number === 0) return 0;
-    if (number === 1) return 1;
-    if (cache[number]) return cache[number];
-    const result = f(number - 1) + f(number - 2);
-    cache[number] = result;
-    return result;
+  function f(n) {
+    // Explicit factorial returns: 0 and 1 is always 1 so we can avoid calculations
+    if (n === 0) return 1;
+    if (n === 1) return 1;
+    return n * f(n - 1);
   }
 
   return f(number);
 };
 
-module.exports = { fib };
+module.exports = { fact };
